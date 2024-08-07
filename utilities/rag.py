@@ -120,28 +120,28 @@ def persian_print(persian_text):
     console.print(styled_text)
 
 # Usage example
-async def main():
-    folder_path = r'/content'
-    language = 'persian'  # Change to 'persian' if needed
+# async def main():
+#     folder_path = r'/home/mehdi/Documents/Persian_Rag/Rag_for_chatbot/Test_folder'
+#     language = 'persian'  # Change to 'persian' if needed
 
-    rag = RAG()
+#     rag = RAG()
 
-    # Build and save the index from a folder of documents
-    index_path = await rag.build_index_from_folder(folder_path, language)
-    print(f"Index saved at: {index_path}")
+#     # Build and save the index from a folder of documents
+#     index_path = await rag.build_index_from_folder(folder_path, language)
+#     print(f"Index saved at: {index_path}")
 
-    # Load the index and search
-    query = "Code Assist"
-    search_results = rag.search(query, top_k=5, index_path=index_path, language=language)
-    rag.print_search_results(search_results)
+#     # Load the index and search
+#     query = "Code Assist"
+#     search_results = rag.search(query, top_k=5, index_path=index_path, language=language)
+#     rag.print_search_results(search_results)
 
-    # Example usage for RAG
-    Question = rag.rag(query)
-    persian_print(f"{Question}\nAnswer:")
+#     # Example usage for RAG
+#     Question = rag.rag(query)
+#     persian_print(f"{Question}\nAnswer:")
 
 
 
-import nest_asyncio
-nest_asyncio.apply()
-import asyncio
-asyncio.run(main())
+# import nest_asyncio
+# nest_asyncio.apply()
+# import asyncio
+# asyncio.run(main())
