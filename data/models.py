@@ -14,6 +14,9 @@ class Admin(Role):
 class NormalUser(Role):
     type: str = "User"
 
+class Owner(Role):
+    type: str = "Owner"
+
 
 class UserBase(BaseModel):
     username: str
@@ -43,21 +46,12 @@ class TokenData(BaseModel):
     username: str | None = None
 
 
-class Chat(BaseModel):
-    username: str 
-    topic: str
-    description: str
-    chat_history: List
-    total_token_count: int | None = 0
-    total_token_use_as_input: int | None = 0
-    total_token_use_as_output: int | None = 0
-    can_use: int | None = True
-class Account(BaseModel):
-    username: str
-    model_name:str
-    api_key: str
-    company_name: str
-    total_token_output: int | None = 0
-    total_token_input: int | None = 0
+class Folder(BaseModel):
+    folder_name:str
+    have_Rag:bool
+    Rag_embedder:str | None = None
 
-    
+class Folder_User(BaseModel):
+    folder_name:str
+    username:str
+    role: Role
