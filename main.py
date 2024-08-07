@@ -1,13 +1,10 @@
 from fastapi import FastAPI, status, Form, HTTPException, Depends, BackgroundTasks
 # from .data.models import UserBase,UserOut,UserIn,Token,DirectoryListing
 from data.models import UserBase,UserOut,UserIn,Token,Account
-from data.chat import find_all_chats,find_all_chatrooms,create_and_insert_chat,update_chats
 # from .data.user import is_user_exists, create_user
 from data.user import is_user_exists, create_user
-from data.account import verify_token_availability,find_api_key,update_account_token,create_account_db,update_account_db,find_account_document_by_user_name_model_name
 # from .utils.user_auth import authenticate_user,return_titimedelta,create_access_token,get_current_active_user
 from utils.user_auth import authenticate_user,return_titimedelta,create_access_token,get_current_active_user,get_current_active_user_admin
-from utils.GPT import ChatBot
 from typing import Any,List,Annotated,Dict
 from fastapi.responses import HTMLResponse
 from fastapi.security import  OAuth2PasswordRequestForm
@@ -16,10 +13,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 import asyncio
 import os
-from concurrent.futures import ThreadPoolExecutor
 from fastapi import BackgroundTasks
 
-executor = ThreadPoolExecutor()
  
 PATH_DOCUMENT = "C:\\Users\\admin\\Desktop\\Franam"
 
